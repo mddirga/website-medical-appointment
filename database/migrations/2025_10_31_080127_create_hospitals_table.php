@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('hospitals', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->index();
+            $table->string('photo');
+            $table->text('about');
+            $table->string('address');
+            $table->string('city')->index();
+            $table->string('post_code');
+            $table->string('phone');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
